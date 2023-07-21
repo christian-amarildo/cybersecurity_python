@@ -1,9 +1,3 @@
-Port Scanner is an application designed to probe a server or host for open ports. Such an application may be used by administrators to verify security policies of their networks and by attackers to identify network services running on a host and exploit vulnerabilities.
-
-O Scanner de Portas é uma aplicação projetada para verificar um servidor ou host em busca de portas abertas. Essa aplicação pode ser usada por administradores para verificar as políticas de segurança de suas redes e por atacantes para identificar serviços de rede em execução em um host e explorar vulnerabilidades.
-
-melhore o texto adicionando informações e traduza para português
-
 O código fornecido é um exemplo de um programa de Scanner de Portas em Python. Vamos explicar detalhadamente cada parte dele:
 
 1. Importação do módulo socket:
@@ -32,4 +26,4 @@ Este bloco é executado somente se o programa for executado diretamente (não se
 
 Dentro deste bloco, são feitas duas chamadas de função: `conScan('216.58.207.238', 80)` e `portScan('google.com', [80, 22])`. A primeira verificação é para o endereço IP "216.58.207.238" na porta 80, e a segunda verificação é para o domínio "google.com" nas portas 80 e 22. As informações de resultado são exibidas no console.
 
-Esse código é um exemplo básico de um Port Scanner em Python. É importante ressaltar que o uso de um Port Scanner em ambientes não autorizados pode ser ilegal e violar a política de segurança de redes. Portanto, seu uso deve ser sempre de forma ética e com permissão dos responsáveis pela rede ou sistema em questão.
+Esse código é um exemplo básico de um Port Scanner em Python. É importante ressaltar que o uso de um Port Scanner em ambientes não autorizados pode ser ilegal e violar a política de segurança de redes.
