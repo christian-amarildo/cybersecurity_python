@@ -1,7 +1,35 @@
-O Port Scanner, também conhecido como Scanner de Portas, é um aplicativo projetado para verificar um servidor ou host em busca de portas abertas. Esse tipo de aplicativo pode ser utilizado por administradores para verificar as políticas de segurança de suas redes e por atacantes para identificar os serviços de rede em execução em um host e explorar vulnerabilidades.
+Port Scanner is an application designed to probe a server or host for open ports. Such an application may be used by administrators to verify security policies of their networks and by attackers to identify network services running on a host and exploit vulnerabilities.
 
-O funcionamento do Port Scanner baseia-se na tentativa de se conectar a uma série de portas em um determinado host e verificar se elas estão abertas ou fechadas. Uma porta aberta indica que há um serviço em execução e disponível para conexões, enquanto uma porta fechada significa que o serviço não está respondendo a conexões naquela porta específica.
+O Scanner de Portas é uma aplicação projetada para verificar um servidor ou host em busca de portas abertas. Essa aplicação pode ser usada por administradores para verificar as políticas de segurança de suas redes e por atacantes para identificar serviços de rede em execução em um host e explorar vulnerabilidades.
 
-Os administradores de rede podem usar o Port Scanner como uma ferramenta de monitoramento para garantir que apenas as portas necessárias estejam abertas em seus servidores, reduzindo assim a superfície de ataque e melhorando a segurança da rede. Isso ajuda a identificar portas não autorizadas ou serviços não essenciais que possam representar riscos de segurança.
+melhore o texto adicionando informações e traduza para português
 
-Por outro lado, os atacantes podem utilizar o Port Scanner como uma ferramenta para mapear os serviços em um host e identificar possíveis vulnerabilidades que possam ser exploradas para ganhar acesso não autorizado. Eles podem, por exemplo, procurar por portas de serviços conhecidos com vulnerabilidades conhecidas e tentar explorá-las para obter acesso não autorizado.
+O código fornecido é um exemplo de um programa de Scanner de Portas em Python. Vamos explicar detalhadamente cada parte dele:
+
+1. Importação do módulo socket:
+O primeiro passo é importar o módulo `socket`, que fornece as funções e classes necessárias para trabalhar com sockets em Python. O módulo `socket` permite a comunicação entre diferentes dispositivos por meio de conexões de rede.
+
+2. Função `conScan(tgtHost, tgtPort)`:
+Esta é a função responsável por verificar se uma determinada porta em um host específico está aberta ou fechada. Ela recebe dois argumentos: `tgtHost`, que é o endereço IP ou nome de domínio do host a ser verificado, e `tgtPort`, que é o número da porta a ser verificado.
+
+Dentro da função, primeiro criamos um objeto de socket usando `socket(AF_INET, SOCK_STREAM)`. O `AF_INET` indica que estamos usando uma família de endereços IPv4, e o `SOCK_STREAM` indica que estamos utilizando um socket TCP para conexão.
+
+Em seguida, utilizamos o método `connect((tgtHost, tgtPort))` para tentar estabelecer uma conexão com o host e porta especificados. Se a conexão for bem-sucedida, significa que a porta está aberta, e exibimos a mensagem "[+] %s/tcp open" indicando que a porta está aberta. Caso contrário, caímos na cláusula `except` e exibimos a mensagem "[-] %s/tcp closed" indicando que a porta está fechada.
+
+3. Função `portScan(tgtHost, tgtPorts)`:
+Esta função é a principal do programa e é responsável por realizar o scan de múltiplas portas em um host específico. Ela recebe dois argumentos: `tgtHost`, que é o endereço IP ou nome de domínio do host a ser verificado, e `tgtPorts`, que é uma lista de números de portas a serem verificados.
+
+Dentro da função, utilizamos `gethostbyname(tgtHost)` para obter o endereço IP do host a partir do nome de domínio especificado. Se o host não puder ser resolvido, uma exceção será tratada e exibiremos a mensagem "[-] Cannot resolve %s", informando que o host não pode ser resolvido.
+
+Em seguida, usamos `gethostbyaddr(tgtIP)` para tentar obter o nome do host a partir do endereço IP. Caso contrário, exibimos o próprio endereço IP.
+
+Depois disso, definimos um timeout de 1 segundo usando `setdefaulttimeout(1)`. Isso garante que a função `connect()` do objeto socket não ficará bloqueada por muito tempo caso não consiga estabelecer uma conexão com a porta especificada.
+
+Por fim, utilizamos um loop `for` para percorrer a lista de portas em `tgtPorts`. A cada iteração, chamamos a função `conScan(tgtHost, int(tgtPort))` para verificar se a porta está aberta ou fechada.
+
+4. Bloco `if __name__ == '__main__':`:
+Este bloco é executado somente se o programa for executado diretamente (não se for importado como módulo em outro programa). É comum em Python usar esse bloco para executar código que deve ser executado apenas quando o arquivo é executado diretamente.
+
+Dentro deste bloco, são feitas duas chamadas de função: `conScan('216.58.207.238', 80)` e `portScan('google.com', [80, 22])`. A primeira verificação é para o endereço IP "216.58.207.238" na porta 80, e a segunda verificação é para o domínio "google.com" nas portas 80 e 22. As informações de resultado são exibidas no console.
+
+Esse código é um exemplo básico de um Port Scanner em Python. É importante ressaltar que o uso de um Port Scanner em ambientes não autorizados pode ser ilegal e violar a política de segurança de redes. Portanto, seu uso deve ser sempre de forma ética e com permissão dos responsáveis pela rede ou sistema em questão.
