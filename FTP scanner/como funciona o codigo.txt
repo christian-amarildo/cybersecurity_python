@@ -1,0 +1,33 @@
+O código fornecido é um pequeno script Python que verifica se é possível fazer login em um servidor FTP de forma anônima. O FTP (File Transfer Protocol) é um protocolo de rede amplamente utilizado para transferir arquivos entre um cliente e um servidor.
+
+A função "anonLogin(hostname)" tenta fazer login em um servidor FTP especificado por "hostname" usando as credenciais de login anônimas. O login anônimo é uma forma de acesso público, comumente permitida por servidores FTP, que permite que os usuários acessem o servidor sem a necessidade de fornecer um nome de usuário ou senha. É uma maneira comum de permitir que os usuários façam o download de arquivos públicos ou compartilhados sem autenticação.
+
+Aqui está uma explicação passo a passo do código:
+
+1. Importa o módulo "ftplib", que fornece as funcionalidades para interagir com servidores FTP em Python.
+
+2. Define uma função chamada "anonLogin" que recebe o parâmetro "hostname", que é o endereço IP ou nome de domínio do servidor FTP que queremos verificar.
+
+3. Inicia um bloco de código onde ocorrerão tentativas de execução de certas operações. Se algum erro ocorrer dentro do bloco, o código irá para o bloco "except".
+
+4. Cria um objeto "ftp" do tipo "FTP" para estabelecer uma conexão com o servidor FTP especificado pelo "hostname".
+
+5. Tenta fazer login no servidor FTP usando as credenciais de login anônimas. Geralmente, o nome de usuário é definido como "anonymous" para acessos anônimos.
+
+6. Se o login for bem-sucedido, exibe uma mensagem indicando que o login anônimo foi bem-sucedido, juntamente com o nome do servidor ("hostname").
+
+7. Fecha a conexão FTP.
+
+8. Retorna "True" para indicar que o login anônimo foi bem-sucedido.
+
+9. Captura qualquer exceção (erro) que ocorra dentro do bloco "try".
+
+10. Se ocorrer um erro durante o login anônimo, exibe uma mensagem indicando que o login falhou.
+
+11. Retorna "False" para indicar que o login anônimo falhou.
+
+12. Verifica se o script está sendo executado como programa principal (não como módulo importado).
+
+13. Chama a função "anonLogin" passando o endereço IP "90.130.70.73" como argumento para verificar se é possível fazer login anônimo neste servidor FTP específico.
+
+O objetivo do código é fornecer uma maneira rápida de verificar se o servidor FTP permite o acesso anônimo. No entanto, é importante lembrar que nem todos os servidores FTP permitem o acesso anônimo, e mesmo que permitam, pode haver restrições de acesso ou questões de segurança associadas. Portanto, é essencial obter permissão adequada antes de realizar qualquer tipo de teste em servidores FTP ou qualquer sistema remoto.
