@@ -26,5 +26,9 @@ def portScan(tgtHost, tgtPorts):
         conScan(tgtHost, int(tgtPort))
 
 if __name__ == '__main__':
+    # Faz uma conexão ao endereço IP "216.58.207.238" na porta 80
     conScan('216.58.207.238', 80)
+    
+    # Escaneia o endereço "google.com" nas portas 80 e 22
     portScan('google.com', [80, 22])
+
