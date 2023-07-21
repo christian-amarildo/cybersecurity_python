@@ -1,4 +1,4 @@
-O código fornecido é um exemplo de um programa de Scanner de Portas em Python. Vamos explicar detalhadamente cada parte dele:
+O código é um exemplo de um programa de Scanner de Portas em Python. Vamos explicar detalhadamente cada parte dele:
 
 1. Importação do módulo socket:
 O primeiro passo é importar o módulo `socket`, que fornece as funções e classes necessárias para trabalhar com sockets em Python. O módulo `socket` permite a comunicação entre diferentes dispositivos por meio de conexões de rede.
