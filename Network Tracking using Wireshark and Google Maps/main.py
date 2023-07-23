@@ -18,4 +18,26 @@ gi = retKML(dstip, srcip):
             '<styleUrl>#transBluePoly</styleUrl>\n'
             '<LineString>\n'
             '<Placemark>\n'
-            
+        )(dstip, dstlongitude,dstlatitude, srclongitude, srclatitude)
+        return Kml
+    except:
+        return ''
+
+def plotIPs(pcap):
+    kmlPts = ''
+    for (ts, buf) in pcap:
+        try:
+            eth = dpkt.etheernet.Ethernet(buf)
+            ip = eth.data
+            src = socket.inet_ntoa(ip.src)
+            dst = socket.inet_ntoa(ip.dst)
+            KML = retKML(dst, src)
+            kmlPts = kmlPts +KML
+        except:
+            pass
+        retunr kmlPts
+
+def main():
+    f = open('wire.pcap', 'rb')
+    pcap = dpkt.pcap.Reader(f)
+    kmlheader = '<?xml version="1.0" encoding="UTF-8"?> \n<kml xmlns="http:
