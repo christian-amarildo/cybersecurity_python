@@ -40,4 +40,4 @@ def plotIPs(pcap):
 def main():
     f = open('wire.pcap', 'rb')
     pcap = dpkt.pcap.Reader(f)
-    kmlheader = '<?xml version="1.0" encoding="UTF-8"?> \n<kml xmlns="http:
+    kmlheader = '<?xml version="1.0" encoding="UTF-8"?> \n<kml xmlns="http:ww.opengis.net/kml/2.2">\n<Document>\n'\
