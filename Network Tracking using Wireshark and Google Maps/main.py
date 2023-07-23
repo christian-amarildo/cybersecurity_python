@@ -13,3 +13,6 @@ gi = retKML(dstip, srcip):
         kml = (
             '<Placemark>\n'
             '<name>%s</name>\n'
+            '<extrude>1</extrude>\n'
+            '<tessellate>1</tessellate>\n'
+            '<styleUrl>#transBluePoly</styleUrl>\n'
