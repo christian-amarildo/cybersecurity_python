@@ -16,3 +16,6 @@ gi = retKML(dstip, srcip):
             '<extrude>1</extrude>\n'
             '<tessellate>1</tessellate>\n'
             '<styleUrl>#transBluePoly</styleUrl>\n'
+            '<LineString>\n'
+            '<Placemark>\n'
+            
