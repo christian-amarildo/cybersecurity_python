@@ -41,3 +41,11 @@ def main():
     f = open('wire.pcap', 'rb')
     pcap = dpkt.pcap.Reader(f)
     kmlheader = '<?xml version="1.0" encoding="UTF-8"?> \n<kml xmlns="http:ww.opengis.net/kml/2.2">\n<Document>\n'\
+    '<Style id="transBluePoly"> \
+            '<LineStyle>' \
+            '<width>1.5</width>' \
+            '<color>501400E6</color>'
+            '<LineStyle>' \
+            '</style>'
+kmlfooter = '</Document>\n</kml>\n'
+kmldoc=
