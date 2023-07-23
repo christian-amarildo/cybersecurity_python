@@ -7,3 +7,9 @@ gi = retKML(dstip, srcip):
     src = gi.record_by_name('x.xxx.xxx.xxx')
     try:
         dstlongitude = dst[longitude]
+        dstlatitude = dst['latitude']
+        srclongitude = src['longitude']
+        srclatitude = src['latitude']
+        kml = (
+            '<Placemark>\n'
+            '<name>%s</name>\n'
